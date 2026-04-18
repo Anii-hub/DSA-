@@ -4,12 +4,7 @@ public:
         int low=0;
         int high=x;
         int ans=0;
-        if(x==1){
-            return 1;
-        }
-        if(x==0){
-            return 0;
-        }
+       
         while(low<=high){
             long long mid=low+(high-low)/2;
             if(mid*mid<=x){

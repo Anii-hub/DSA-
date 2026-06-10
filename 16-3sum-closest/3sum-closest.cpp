@@ -20,7 +20,7 @@ public:
                 }
 
                 if(sum==target){
-                 if(sum == target)
+               
                    return target;
                 }
                 else if(sum<target){

@@ -20,9 +20,8 @@ public:
                 }
 
                 if(sum==target){
-                    j++;
-                    k--;
-
+                 if(sum == target)
+                   return target;
                 }
                 else if(sum<target){
                     j++;

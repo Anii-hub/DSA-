@@ -6,19 +6,20 @@ public:
         int j=0;
         int k=n-1;
         while(j<=k){
-            if(nums[j]==0){
-                swap(nums[i],nums[j]);
-                i++;
+            if(nums[j]==1){
+                
                 j++;
             }
-            else if(nums[j]==1){
-                j++;
-            }
-            else{
+            else if(nums[j]==2){
                 swap(nums[j],nums[k]);
                 k--;
+                
+            }
+            else{
+                swap(nums[i],nums[j]);
+                j++;
+                i++;
             }
         }
-    
     }
 };

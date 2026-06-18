@@ -5,7 +5,6 @@ public:
        
         int i=0;
         int j=0;
-        int l=0;
         int maxi=0;
         map<int,int>mpp;
         vector<int> res;

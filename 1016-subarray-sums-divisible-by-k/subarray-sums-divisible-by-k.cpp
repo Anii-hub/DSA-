@@ -10,7 +10,7 @@ public:
             presum+=nums[i];
             int remainder=presum%k;
             if(remainder<0){
-                remainder+=k;
+                remainder=(presum%k)+k;
             }
             count+=mpp[remainder];
             mpp[remainder]++;

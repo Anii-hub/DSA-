@@ -13,19 +13,9 @@ public:
         ListNode*b=headB;
        
         while(a!=b){
-           if(a==nullptr){
-            a=headB;
-           }
-           else{
-             a=a->next;
-           }
-           if(b==nullptr){
-            b=headA;
-           }
-          else{
-           b=b->next;}
+            a=a==nullptr?headB:a->next;
+            b=b==nullptr?headA:b->next;
         }
-      
         return a;
     }
 };

@@ -3,19 +3,17 @@ public:
     vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval) {
         int n =intervals.size();
         vector<vector<int>> res;
-        int nstart=newInterval[0];
-        int nend=newInterval[1];
+       
         
         
         bool insert=false;
       for(int i=0;i<n;i++){
-        int start=intervals[i][0];
-        int end=intervals[i][1];
-            if(insert==false && start>=nstart){
-                res.push_back({nstart,nend});
+       
+            if(!insert && intervals[i][0]>=newInterval[0]){
+                res.push_back(newInterval);
                 insert=true;
             }
-            res.push_back({start,end});
+            res.push_back(intervals[i]);
       }
       if (!insert)
             res.push_back(newInterval);

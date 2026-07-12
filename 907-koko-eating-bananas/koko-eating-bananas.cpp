@@ -1,31 +1,37 @@
 class Solution {
 public:
-    int maximum(vector<int>&m){
-        int maxi=INT_MIN;
-        for(int i=0;i<m.size();i++){
-            maxi=max(maxi,m[i]);
+    int maxi(vector<int>& piles){
+        int n=piles.size();
+        int maximum=0;
+        for(int i=0;i<n;i++){
+            if(piles[i]>maximum)
+            maximum=piles[i];
         }
-        return maxi;
+        return maximum;
     }
-    int hours(vector<int>&p,int hour){
+    int totaltime(vector<int>& piles, int h){
+        int n=piles.size();
         int t=0;
-        for(int i=0;i<p.size();i++){
-            t+=ceil(double(p[i])/hour);
+        for(int i=0;i<n;i++){
+            t+=ceil(double(piles[i])/h);
         }
         return t;
     }
-    int minEatingSpeed(vector<int> piles, int h) {
-        int low=1;
-        int high=maximum(piles);
-        while(low<high){
-            int mid=low+(high-low)/2;
-            int t=hours(piles,mid);
-            if(t<=h){
-                high=mid;
+    int minEatingSpeed(vector<int>& piles, int h) {
+        int n=maxi(piles);
+        int i=1;
+        int j=n;
+        while(i<j){
+            int mid=i+(j-i)/2;
+            int t=totaltime(piles,mid);
+            if(t>h){
+                i=mid+1;
             }
             else{
-                low=mid+1;
+                j=mid;
             }
-        }return low;
+            
+        }
+        return i;
     }
 };

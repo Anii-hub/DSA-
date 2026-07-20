@@ -11,21 +11,21 @@
  */
 class Solution {
 public:
-    bool isSymmetric(TreeNode* root) {
-        if(root==nullptr){
+    bool solve(TreeNode* p,TreeNode* q){
+        if(p==nullptr && q==nullptr){
             return true;
         }
-        return solve(root->left,root->right);
-
-    }
-    bool solve(TreeNode* left,TreeNode* right){
-        if(left==nullptr && right==nullptr){
-            return true;
-        }
-        if(left==nullptr ||right==nullptr || left->val!=right->val){
+        if(p==nullptr || q==nullptr)
+        return false;
+        if(p->val!=q->val){
             return false;
         }
-        return solve(left->left,right->right)&&solve(right->left,left->right);
+        bool r1=solve(p->left,q->right);
+        bool r2=solve(p->right,q->left);
+        return r1&&r2;
 
+    }
+    bool isSymmetric(TreeNode* root) {
+        return solve(root,root);
     }
 };

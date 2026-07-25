@@ -8,7 +8,7 @@ public:
         int take=nums[i]+solve(nums,i+2,dp);
         int nottake=solve(nums,i+1,dp);
         dp[i]= max(take,nottake);
-         return max(take,nottake);
+         return dp[i];
     }
     int rob(vector<int>& nums) {
         int n=nums.size();

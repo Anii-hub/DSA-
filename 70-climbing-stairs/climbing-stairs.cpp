@@ -8,9 +8,8 @@ public:
         if(dp[i]!=-1){
             return dp[i];
         }
-        int a1=solve(n,i+1,dp);
-        int a2=solve(n,i+2,dp);
-        int ans=a1+a2;
+        
+        int ans=solve(n,i+1,dp)+solve(n,i+2,dp);
         dp[i]=ans;
         return ans;
 

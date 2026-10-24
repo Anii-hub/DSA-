@@ -14,7 +14,7 @@ public:
             if(height[j]>rightmax){
                 rightmax=height[j];
             }
-            if(height[i]<height[j]){
+            if(leftmax < rightmax){
                 sum+=leftmax-height[i];
                 i++;
             }
